@@ -1,0 +1,15 @@
+ITEM;CATEGORIA;DATA;MAPE;VIÉS DO ERRO DA PREVISÃO;COBERTURA DE ESTOQUE EM DIAS;RUPTURA DO ESTOQUE
+8101019;Linha Branca;01/01/2025;20%;Previsão de Vendas foi MENOR que as vendas realizadas;50;5%
+8101019;Linha Branca;01/02/2025;25%;Previsão de Vendas foi MENOR que as vendas realizadas;30;7%
+8101019;Linha Branca;01/03/2025;30%;Previsão de Vendas foi MAIOR que as vendas realizadas;30;5%
+8101019;Linha Branca;01/04/2025;20%;Previsão de Vendas foi MAIOR que as vendas realizadas;30;5%
+8101019;Linha Branca;01/05/2025;30%;Previsão de Vendas foi MAIOR que as vendas realizadas;22;5%
+8101019;Linha Branca;01/06/2025;35%;Previsão de Vendas foi MAIOR que as vendas realizadas;20;5%
+8101019;Linha Branca;01/07/2025;40%;Previsão de Vendas foi MAIOR que as vendas realizadas;10;5%
+8101020;Linha Branca;01/01/2025;5%;Previsão de Vendas foi MENOR que as vendas realizadas;45;5%
+8101020;Linha Branca;01/02/2025;10%;Previsão de Vendas foi MENOR que as vendas realizadas;47;7%
+8101020;Linha Branca;01/03/2025;90%;Previsão de Vendas foi MAIOR que as vendas realizadas;40;5%
+8101020;Linha Branca;01/04/2025;10%;Previsão de Vendas foi MAIOR que as vendas realizadas;40;5%
+8101020;Linha Branca;01/05/2025;20%;Previsão de Vendas foi MAIOR que as vendas realizadas;43;5%
+8101020;Linha Branca;01/06/2025;10%;Previsão de Vendas foi MAIOR que as vendas realizadas;30;5%
+8101020;Linha Branca;01/07/2025;10%;Previsão de Vendas foi MAIOR que as vendas realizadas;30;5%
