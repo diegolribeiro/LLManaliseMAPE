@@ -20,7 +20,8 @@ load_dotenv()
 set_debug(False)
 llm = ChatOpenAI(model="gpt-4.1-mini",
                     temperature=0.0,
-                    api_key=os.getenv("OPENAI_API_KEY"))
+                    api_key=os.getenv("OPENAI_API_KEY"),
+                    verbose=True)
 
 df_mape_categoria = pd.read_csv("./dados/MAPE_CATEGORIA.csv", sep=";", thousands=".", decimal=",", encoding="latin1")
 df_mape_item = pd.read_csv("./dados/MAPE_ITEM.csv", sep=";", thousands=".", decimal=",", encoding="latin1")
@@ -46,7 +47,6 @@ if st.button("Analisar MAPE"):
         #cadeia = SimpleSequentialChain(chains=[cadeia_cidade, cadeia_restaurantes, cadeia_culturual], verbose=True)
         cadeia_analise = (parte1_mape)
         resultado = cadeia_analise.invoke({"dados" : dados_mape_categoria})
-        #print(resultado)
         with st.expander(str(options), expanded=False, icon=None, width="stretch"):
             st.markdown(resultado)
 
@@ -56,10 +56,12 @@ if st.button("Analisar MAPE"):
                 dados = df_mape_item_filtrado[df_mape_item_filtrado['ITEM'] == item]
                 if not dados.empty:
                     with st.expander(str(item), expanded=False, icon=None, width="stretch"):
-                        modelo_mape_item = prompt_analise_previsao.prompt_analise_mape_item(dados[['ITEM','DATA','VIÉS DO ERRO DA PREVISÃO','COBERTURA DE ESTOQUE EM DIAS','RUPTURA DO ESTOQUE']].to_markdown(index=False),options)
+                        modelo_mape_item = prompt_analise_previsao.prompt_analise_mape_item(dados.to_markdown(index=False),options)
                         parte1_mape_item = modelo_mape_item | llm | StrOutputParser()
                         cadeia_analise = (parte1_mape_item)
                         resultado = cadeia_analise.invoke({"dados" : dados, "categoria" : options})
                         st.markdown(resultado)
             
 
+
+            
